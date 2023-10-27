@@ -128,8 +128,12 @@ const Contact = ({}: ContactProps): React.ReactElement => {
           >
             Request a copy
           </Button>
-          <p className='text-muted-foreground'>Calamba, Laguna</p>
-          <p className='text-muted-foreground'>Philippines</p>
+          <p className='text-xs md:text-sm text-muted-foreground'>
+            Calamba, Laguna
+          </p>
+          <p className='text-xs md:text-sm text-muted-foreground'>
+            Philippines
+          </p>
         </div>
       </div>
     </section>
