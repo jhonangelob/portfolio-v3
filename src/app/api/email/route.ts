@@ -1,3 +1,5 @@
+import { ContactEmail } from '@/components/Contact/ContactEmail';
+import { render } from '@react-email/components';
 import { type NextRequest, NextResponse } from 'next/server';
 import nodemailer from 'nodemailer';
 import Mail from 'nodemailer/lib/mailer';
@@ -13,11 +15,14 @@ export async function POST(request: NextRequest) {
     },
   });
 
+  const emailTemplate = render(ContactEmail({ name, email, message }));
+
   const mailOptions: Mail.Options = {
     from: process.env.NODEMAILER_EMAIL,
     to: process.env.NODEMAILER_EMAIL,
-    subject: `Message from ${name} (${email})`,
+    subject: 'Notification from Portfolio',
     text: message,
+    html: emailTemplate,
   };
 
   const sendMailPromise = () =>
