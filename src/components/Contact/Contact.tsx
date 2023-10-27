@@ -1,6 +1,6 @@
 'use client';
 
-import React from 'react';
+import React, { useState } from 'react';
 import { useForm } from 'react-hook-form';
 import { zodResolver } from '@hookform/resolvers/zod';
 import * as z from 'zod';
@@ -16,11 +16,12 @@ import { Input } from '@/components/ui/input';
 import { Textarea } from '@/components/ui/textarea';
 import { formSchema } from '@/lib/validations';
 import { useToast } from '../ui/use-toast';
-import { sendEmail } from '@/lib/send-email';
+import { sendEmail } from '@/lib/email';
 
 type ContactProps = {};
 
 const Contact = ({}: ContactProps): React.ReactElement => {
+  const { toast } = useToast();
   const form = useForm<z.infer<typeof formSchema>>({
     resolver: zodResolver(formSchema),
     defaultValues: {
@@ -35,9 +36,20 @@ const Contact = ({}: ContactProps): React.ReactElement => {
   };
 
   const sendMessage = async (values: z.infer<typeof formSchema>) => {
-    const response = await sendEmail(values);
-    console.log({ response });
-    form.reset();
+    try {
+      await sendEmail(values);
+      toast({
+        title: 'Email Sent!',
+        description: 'Thank you for reaching out!',
+      });
+    } catch (error) {
+      toast({
+        title: 'Email Sending Failed!',
+        description: "Sorry that didn't work out.",
+      });
+    } finally {
+      form.reset();
+    }
   };
 
   return (
