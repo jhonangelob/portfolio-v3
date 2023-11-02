@@ -9,12 +9,14 @@ import {
 
 import { experiences } from '@/constants/experiences';
 import { technologies } from '@/constants/technologies';
+import { ScrollArea, ScrollBar } from '../ui/scroll-area';
+import { Separator } from '../ui/separator';
 
 type TechnologyProps = {};
 
 const Technology = ({}: TechnologyProps): React.ReactElement => {
   return (
-    <section className='wrapper'>
+    <section className='wrapper my-20 md:my-40'>
       <div className='header-text-secondary text-left w-3/6'>
         Technologies and Experience
       </div>
@@ -86,26 +88,29 @@ const Technology = ({}: TechnologyProps): React.ReactElement => {
           <p className='text-accent-red text-base font-medium'>
             Professional Experience
           </p>
-          {experiences.map((item, index) => (
-            <div
-              key={index}
-              className='border-b-2 border-b-muted pb-3 w-full md:w-5/6 space-y-1'
-            >
-              <div className='text-sm font-semibold'>{item.position}</div>
-              <div className='text-xs'>{item.name}</div>
-              <div className='text-xs text-muted-foreground'>
-                {item.location}
+          <ScrollArea className='h-[230px] w-full md:w-5/6'>
+            {experiences.map((item, index) => (
+              <div key={index}>
+                <div className='w-full space-y-1'>
+                  <div className='text-sm font-semibold'>{item.position}</div>
+                  <div className='text-xs'>{item.name}</div>
+                  <div className='text-xs text-muted-foreground'>
+                    {item.location}
+                  </div>
+                  <div className='text-xs text-muted-foreground'>
+                    {item.date.start} -{' '}
+                    {item.date.isPresent ? (
+                      <span className='text-accent-red'>Present</span>
+                    ) : (
+                      item.date.end
+                    )}
+                  </div>
+                </div>
+                <Separator className='my-3' />
+                <ScrollBar orientation='horizontal' />
               </div>
-              <div className='text-xs text-muted-foreground mb-2'>
-                {item.date.start} -{' '}
-                {item.date.isPresent ? (
-                  <span className='text-accent-red'>Present</span>
-                ) : (
-                  item.date.end
-                )}
-              </div>
-            </div>
-          ))}
+            ))}
+          </ScrollArea>
         </div>
       </div>
     </section>
