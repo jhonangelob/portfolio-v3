@@ -1,21 +1,18 @@
 export const projects = [
   {
-    name: 'HomeAide',
-    description: 'Lorem ipsum dolor sit amet.',
-    repository: 'portfolio',
-    link: 'google.com',
-  },
-  {
-    name: 'Test Project2',
+    title: 'Portfolio',
+    subtitle: 'You are here',
     description:
-      'Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet.',
-    repository: 'portfolio2',
-    link: 'google.com2',
+      'A website to showcase skills, experiences, and passion within the profession.',
+    repository: 'https://github.com/jhonangelob/portfolio-v3',
+    link: 'portfolio-v3-delta-opal.vercel.app',
   },
   {
-    name: 'Test Project',
-    description: 'Lorem ipsum dolor sit amet.',
-    repository: 'portfolio',
-    link: 'google.com',
+    title: 'Portfolio',
+    subtitle: 'You are here',
+    description:
+      'A website to showcase skills, experiences, and passion within the profession.',
+    repository: 'https://github.com/jhonangelob/portfolio-v3',
+    link: '',
   },
 ];
