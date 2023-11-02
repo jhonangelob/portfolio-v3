@@ -3,7 +3,6 @@
 import React from 'react';
 import { useForm } from 'react-hook-form';
 import { zodResolver } from '@hookform/resolvers/zod';
-import * as z from 'zod';
 import { Button } from '@/components/ui/button';
 import {
   Form,
@@ -17,6 +16,7 @@ import { Textarea } from '@/components/ui/textarea';
 import { formSchema } from '@/lib/validation';
 import { useToast } from '../ui/use-toast';
 import { sendEmail } from '@/lib/email';
+import * as z from 'zod';
 
 type ContactProps = {};
 

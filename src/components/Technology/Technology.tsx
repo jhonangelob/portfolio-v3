@@ -1,16 +1,9 @@
 import React from 'react';
-import Image from 'next/image';
-import { Avatar, AvatarFallback, AvatarImage } from '../ui/avatar';
-import {
-  HoverCard,
-  HoverCardContent,
-  HoverCardTrigger,
-} from '../ui/hover-card';
-
 import { experiences } from '@/constants/experiences';
 import { technologies } from '@/constants/technologies';
-import { ScrollArea, ScrollBar } from '../ui/scroll-area';
-import { Separator } from '../ui/separator';
+import { ScrollArea } from '../ui/scroll-area';
+import ExperienceCard from './ExperienceCard';
+import TechnologyCard from './TechnologyCard';
 
 type TechnologyProps = {};
 
@@ -30,57 +23,13 @@ const Technology = ({}: TechnologyProps): React.ReactElement => {
           <p>Full Stack Development</p>
           <div className='flex flex-row flex-wrap gap-6'>
             {technologies.development.map((item, index) => (
-              <HoverCard key={index}>
-                <HoverCardTrigger asChild>
-                  <div className='relative w-[30px] h-[30px] md:w-[35px] md:h-[35px]'>
-                    <Image
-                      key={index}
-                      src={item.assets}
-                      alt={item.name}
-                      fill={true}
-                    />
-                  </div>
-                </HoverCardTrigger>
-                <HoverCardContent className='w-80'>
-                  <div className='flex justify-between space-x-4'>
-                    <Avatar>
-                      <AvatarImage src={item.assets} />
-                      <AvatarFallback>jhn</AvatarFallback>
-                    </Avatar>
-                    <div className='space-y-1'>
-                      <h4 className='text-sm font-semibold'>{item.name}</h4>
-                      <p className='text-sm'>{item.description}</p>
-                    </div>
-                  </div>
-                </HoverCardContent>
-              </HoverCard>
+              <TechnologyCard technology={item} key={index} />
             ))}
           </div>
           <p>Others</p>
           <div className='flex flex-row flex-wrap space-x-6'>
             {technologies.others.map((item, index) => (
-              <HoverCard key={index}>
-                <HoverCardTrigger asChild>
-                  <div
-                    key={index}
-                    className='relative w-[30px] h-[30px] md:w-[35px] md:h-[35px]'
-                  >
-                    <Image src={item.assets} alt={item.name} fill={true} />
-                  </div>
-                </HoverCardTrigger>
-                <HoverCardContent className='w-80'>
-                  <div className='flex justify-between space-x-4'>
-                    <Avatar>
-                      <AvatarImage src={item.assets} />
-                      <AvatarFallback>jhn</AvatarFallback>
-                    </Avatar>
-                    <div className='space-y-1'>
-                      <h4 className='text-sm font-semibold'>{item.name}</h4>
-                      <p className='text-sm'>{item.description}</p>
-                    </div>
-                  </div>
-                </HoverCardContent>
-              </HoverCard>
+              <TechnologyCard technology={item} key={index} />
             ))}
           </div>
         </div>
@@ -90,25 +39,7 @@ const Technology = ({}: TechnologyProps): React.ReactElement => {
           </p>
           <ScrollArea className='h-[230px] w-full md:w-5/6'>
             {experiences.map((item, index) => (
-              <div key={index}>
-                <div className='w-full space-y-1'>
-                  <div className='text-sm font-semibold'>{item.position}</div>
-                  <div className='text-xs'>{item.name}</div>
-                  <div className='text-xs text-muted-foreground'>
-                    {item.location}
-                  </div>
-                  <div className='text-xs text-muted-foreground'>
-                    {item.date.start} -{' '}
-                    {item.date.isPresent ? (
-                      <span className='text-accent-red'>Present</span>
-                    ) : (
-                      item.date.end
-                    )}
-                  </div>
-                </div>
-                <Separator className='my-3' />
-                <ScrollBar orientation='horizontal' />
-              </div>
+              <ExperienceCard experience={item} key={index} />
             ))}
           </ScrollArea>
         </div>

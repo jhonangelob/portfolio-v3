@@ -8,13 +8,10 @@ import {
   Tailwind,
   Text,
 } from '@react-email/components';
-import * as React from 'react';
+import React from 'react';
+import { Contact } from '../../types/contacts';
 
-interface ContactEmailProps {
-  name: string;
-  email: string;
-  message: string;
-}
+type ContactEmailProps = Contact;
 
 export const ContactEmail = ({ name, email, message }: ContactEmailProps) => (
   <Tailwind
