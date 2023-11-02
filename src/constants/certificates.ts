@@ -1,4 +1,6 @@
-export const certificates = [
+import { Certificates } from '@/types/certificates';
+
+export const certificates: Certificates = [
   {
     title: 'Cyber Security Essentials',
     src: '/assets/images/cyber-essentials.png',

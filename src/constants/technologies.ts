@@ -1,4 +1,6 @@
-export const technologies = {
+import { Technologies } from '@/types/technologies';
+
+export const technologies: Technologies = {
   development: [
     {
       name: 'JavaScript',

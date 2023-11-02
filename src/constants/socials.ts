@@ -1,6 +1,7 @@
+import { Socials } from '@/types/socials';
 import { RxLinkedinLogo, RxGithubLogo, RxDiscordLogo } from 'react-icons/rx';
 
-export const socials = [
+export const socials: Socials = [
   {
     name: 'LinkedIn',
     link: 'https://www.linkedin.com/in/jhonangelob/',

@@ -1,4 +1,6 @@
-export const projects = [
+import { Projects } from '@/types/projects';
+
+export const projects: Projects = [
   {
     title: 'Portfolio',
     subtitle: 'You are here',

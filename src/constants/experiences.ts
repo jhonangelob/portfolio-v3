@@ -1,6 +1,8 @@
-export const experiences = [
+import { Experiences } from '@/types/experiences';
+
+export const experiences: Experiences = [
   {
-    name: 'Vananaz, Inc.',
+    company: 'Vananaz, Inc.',
     location: 'Cebu, Philippines',
     position: 'Junior Software Engineer',
     date: {
@@ -10,7 +12,7 @@ export const experiences = [
     },
   },
   {
-    name: 'Symph, Inc.',
+    company: 'Symph, Inc.',
     location: 'Cebu, Philippines',
     position: 'Web Developer Intern',
     date: {
