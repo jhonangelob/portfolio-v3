@@ -5,7 +5,7 @@ type AboutProps = {};
 
 const About = ({}: AboutProps): React.ReactElement => {
   return (
-    <section className='wrapper'>
+    <section className='wrapper my-20 md:my-40'>
       <div className='header-text-secondary'>About</div>
       <div className='w-full flex flex-col md:flex-row space-x-12'>
         <div className='w-full text-justify md:text-left md:w-4/6 text-sm md:text-base text-secondary-foreground'>

@@ -4,7 +4,7 @@ type HeroProps = {};
 
 const Hero = ({}: HeroProps): React.ReactElement => {
   return (
-    <section className='wrapper md:mt-44 md:mb-52 mt-'>
+    <section className='wrapper md:mt-44 md:mb-52'>
       <div className='w-full flex justify-end text-lg md:text-2xl font-semibold u text-muted-foreground italic md:not-italic'>
         Software Engineer
       </div>

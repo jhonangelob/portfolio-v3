@@ -1,6 +1,6 @@
 'use client';
 
-import React, { useState } from 'react';
+import React from 'react';
 import { useForm } from 'react-hook-form';
 import { zodResolver } from '@hookform/resolvers/zod';
 import * as z from 'zod';
@@ -14,7 +14,7 @@ import {
 } from '@/components/ui/form';
 import { Input } from '@/components/ui/input';
 import { Textarea } from '@/components/ui/textarea';
-import { formSchema } from '@/lib/validations';
+import { formSchema } from '@/lib/validation';
 import { useToast } from '../ui/use-toast';
 import { sendEmail } from '@/lib/email';
 
@@ -53,7 +53,7 @@ const Contact = ({}: ContactProps): React.ReactElement => {
   };
 
   return (
-    <section className='wrapper flex-center'>
+    <section className='wrapper flex-center my-20'>
       <div className='header-text'>Contact</div>
       <div className='max-w-3xl w-full flex flex-col md:flex-row gap-8'>
         <div className='flex flex-col w-full md:w-4/6 space-y-4'>
