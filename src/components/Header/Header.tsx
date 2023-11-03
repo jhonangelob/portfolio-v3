@@ -5,8 +5,10 @@ import Link from 'next/link';
 import { useTheme } from 'next-themes';
 import { Button } from '../ui/button';
 import { RxArrowRight, RxMoon, RxSun, RxCrumpledPaper } from 'react-icons/rx';
+import { motion } from 'framer-motion';
 
 import { socials } from '@/constants/socials';
+import { animateHeader } from '@/lib/animate';
 
 type HeaderProps = {};
 
@@ -35,10 +37,18 @@ const Header = ({}: HeaderProps): React.ReactElement => {
   return (
     <header className='fixed top-0 w-full bg-background z-10'>
       <nav className='w-full max-w-7xl mx-auto flex flex-row justify-between px-4 md:px-8 py-6'>
-        <div className='flex items-center text-xl md:text-2xl font-bold italic select-none'>
+        <motion.div
+          className='flex items-center text-xl md:text-2xl font-bold italic select-none'
+          animate={animateHeader.right.animate}
+          initial={animateHeader.right.initial}
+        >
           jhn
-        </div>
-        <ul className='flex flex-row items-center gap-x-8'>
+        </motion.div>
+        <motion.ul
+          className='flex flex-row items-center gap-x-8'
+          animate={animateHeader.left.animate}
+          initial={animateHeader.left.initial}
+        >
           {socials.map(
             (item, index) =>
               item.show.header && (
@@ -70,7 +80,7 @@ const Header = ({}: HeaderProps): React.ReactElement => {
               {themeIcon}
             </Button>
           </li>
-        </ul>
+        </motion.ul>
       </nav>
     </header>
   );
