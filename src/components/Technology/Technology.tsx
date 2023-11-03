@@ -21,13 +21,13 @@ const Technology = ({}: TechnologyProps): React.ReactElement => {
         <div className='w-full md:w-4/6 space-y-4'>
           <p className='text-accent-red text-base font-medium'>Technologies</p>
           <p>Full Stack Development</p>
-          <div className='flex flex-row flex-wrap gap-6'>
+          <div className='flex flex-row flex-wrap w-full md:w-5/6 gap-6'>
             {technologies.development.map((item, index) => (
               <TechnologyCard technology={item} key={index} />
             ))}
           </div>
           <p>Others</p>
-          <div className='flex flex-row flex-wrap space-x-6'>
+          <div className='flex flex-row flex-wrap w-full md:w-5/6 gap-6'>
             {technologies.others.map((item, index) => (
               <TechnologyCard technology={item} key={index} />
             ))}
