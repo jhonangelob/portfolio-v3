@@ -25,7 +25,7 @@ export default function RootLayout({
   return (
     <html lang='en' suppressHydrationWarning={true}>
       <body
-        className={`${poppins.className} w-full bg-background flex flex-col min-h-screen py-[90px] items-center`}
+        className={`${poppins.className} w-full bg-background flex flex-col min-h-screen overflow-x-hidden py-[90px] items-center`}
       >
         <ThemeProvider
           attribute='class'
