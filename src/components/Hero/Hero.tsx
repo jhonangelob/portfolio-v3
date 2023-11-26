@@ -13,7 +13,7 @@ const Hero = ({}: HeroProps): React.ReactElement => {
   });
 
   return (
-    <section className='wrapper md:mt-44 md:mb-52'>
+    <section className='wrapper my-40 md:mt-44 md:mb-52'>
       <motion.div
         className='font-bold text-foreground text-justify md:text-left text-5xl md:text-7xl'
         ref={ref}
