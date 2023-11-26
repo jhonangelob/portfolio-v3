@@ -132,14 +132,6 @@ const Contact = ({}: ContactProps): React.ReactElement => {
           <p className='text-sm'>
             You can find out more about me on my résumé.
           </p>
-          <Button
-            variant='ghost'
-            size='sm'
-            className='text-accent-red font-semibold px-0'
-            onClick={sendRequest}
-          >
-            Request a copy
-          </Button>
           <p className='text-xs md:text-sm text-muted-foreground'>
             Calamba, Laguna
           </p>
