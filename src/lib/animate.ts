@@ -65,3 +65,28 @@ export const animateFooter = {
     },
   },
 };
+
+export const animate = {
+  slide: {
+    up: {
+      opacity: [0, 1],
+      y: [60, 0],
+      transition: { duration: 0.7 },
+    },
+    right: {
+      opacity: [0, 1],
+      x: [-60, 0],
+      transition: { duration: 0.7 },
+    },
+    left: {
+      opacity: [0, 1],
+      x: [60, 0],
+      transition: { duration: 0.7 },
+    },
+  },
+  appear: {
+    opacity: [0, 1],
+    x: [0, 0],
+    transition: { duration: 1, delay: 0.2 },
+  },
+};

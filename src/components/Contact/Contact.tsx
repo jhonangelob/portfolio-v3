@@ -17,6 +17,8 @@ import { formSchema } from '@/lib/validation';
 import { useToast } from '../ui/use-toast';
 import { sendEmail } from '@/lib/email';
 import * as z from 'zod';
+import { motion } from 'framer-motion';
+import { animate } from '@/lib/animate';
 
 type ContactProps = {};
 
@@ -30,10 +32,6 @@ const Contact = ({}: ContactProps): React.ReactElement => {
       message: '',
     },
   });
-
-  const sendRequest = () => {
-    console.log('requestResume:unimplemented');
-  };
 
   const sendMessage = async (values: z.infer<typeof formSchema>) => {
     try {
@@ -56,7 +54,10 @@ const Contact = ({}: ContactProps): React.ReactElement => {
     <section className='wrapper flex-center my-20' id='contact'>
       <div className='header-text'>Contact</div>
       <div className='max-w-3xl w-full flex flex-col md:flex-row gap-8'>
-        <div className='flex flex-col w-full md:w-4/6 space-y-4'>
+        <motion.div
+          className='flex flex-col w-full md:w-4/6 space-y-4'
+          whileInView={animate.slide.right}
+        >
           <div className='font-semibold text-foreground text-xl md:text-2xl'>
             Questions?
           </div>
@@ -124,8 +125,11 @@ const Contact = ({}: ContactProps): React.ReactElement => {
               </Button>
             </form>
           </Form>
-        </div>
-        <div className='w-full md:w-2/6 md:mt-12 text-sm text-center md:text-left flex flex-col items-center md:items-start space-y-2'>
+        </motion.div>
+        <motion.div
+          className='w-full md:w-2/6 md:mt-12 text-sm text-center md:text-left flex flex-col items-center md:items-start space-y-2'
+          whileInView={animate.appear}
+        >
           <p className='font-bold text-foreground text-md md:text-2xl'>
             Let&apos;s talk about it.
           </p>
@@ -138,7 +142,7 @@ const Contact = ({}: ContactProps): React.ReactElement => {
           <p className='text-xs md:text-sm text-muted-foreground'>
             Philippines
           </p>
-        </div>
+        </motion.div>
       </div>
     </section>
   );
