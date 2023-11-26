@@ -16,7 +16,7 @@ const TestimonalsCard = ({
         <p className='text-center'>{testimonial.message}</p>
         <RxQuote className='w-1/5 mt-auto' />
       </CardContent>
-      <CardFooter className='flex flex-row gap-2 flex-wrap justify-center text-sm pb-0 text-muted-foreground'>
+      <CardFooter className='flex flex-row gap-2 flex-wrap justify-center text-xs md:text-sm pb-0 text-muted-foreground'>
         <span className='text-accent-red font-semibold text-xl'>
           {testimonial.name}
         </span>

@@ -23,24 +23,7 @@ export const testimonials: Testimonials = [
       'Lorem ipsum dolor sit amet. Lorem domet ipsum. Lorem ipsum dolor sit amet. Lorem domet ipsum.',
     name: 'John Doe',
     company: {
-      name: 'Google',
-      position: 'Lead Software Engineer',
-    },
-  },
-  {
-    message: 'Lorem ipsum dolor sit amet. Lorem domet ipsum.',
-    name: 'John Doe',
-    company: {
-      name: 'Mcdo',
-      position: 'Manager',
-    },
-  },
-  {
-    message:
-      'Lorem ipsum dolor sit amet. Lorem domet ipsum. Lorem ipsum dolor sit amet. Lorem domet ipsum.',
-    name: 'John Doe',
-    company: {
-      name: 'Google',
+      name: 'Jollibee',
       position: 'Lead Software Engineer',
     },
   },
@@ -49,7 +32,7 @@ export const testimonials: Testimonials = [
       'Lorem ipsum dolor sit amet. Lorem domet ipsum. Lorem ipsum dolor sit amet. Lorem domet ipsum.',
     name: 'John Doe',
     company: {
-      name: 'Google',
+      name: 'Jollibee',
       position: 'Lead Software Engineer',
     },
   },
