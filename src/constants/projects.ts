@@ -8,6 +8,14 @@ export const projects: Projects = [
       'A website to showcase skills, experiences, and passion within the profession.',
     repository: 'https://github.com/jhonangelob/portfolio-v3',
     link: 'portfolio-v3-delta-opal.vercel.app',
+    technologies: [
+      'next',
+      'typescript',
+      'tailwind',
+      'shadcdn',
+      'sanity',
+      'vercel',
+    ],
   },
   {
     title: 'Portfolio',
@@ -16,5 +24,13 @@ export const projects: Projects = [
       'A website to showcase skills, experiences, and passion within the profession.',
     repository: 'https://github.com/jhonangelob/portfolio-v3',
     link: '',
+    technologies: [
+      'next',
+      'typescript',
+      'tailwind',
+      'shadcdn',
+      'sanity',
+      'vercel',
+    ],
   },
 ];

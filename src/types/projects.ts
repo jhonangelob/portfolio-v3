@@ -4,6 +4,7 @@ export type Project = {
   description: string;
   repository: string;
   link: string;
+  technologies: string[];
 };
 
 export type Projects = Project[];

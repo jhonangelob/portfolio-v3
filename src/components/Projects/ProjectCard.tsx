@@ -3,29 +3,25 @@ import Link from 'next/link';
 import { Card } from '../ui/card';
 import { Button } from '../ui/button';
 import { Separator } from '../ui/separator';
-
-type ProjectProps = {
-  title: string;
-  subtitle: string;
-  description: string;
-  repository: string;
-  link: string;
-};
+import { Project } from '@/types/projects';
 
 type ProjectCardProps = {
-  project: ProjectProps;
+  project: Project;
 };
 
 const ProjectCard = ({ project }: ProjectCardProps): React.ReactElement => {
   return (
     <Card className='w-full border-0 bg-background rounded-none flex-col px-2 md:px-5'>
-      <div>
+      <div className='flex flex-col gap-2'>
         <p className='text-md font-semibold'>
           {project.title} {project.subtitle && `- ${project.subtitle}`}
         </p>
-        <p className='text-xs truncate text-muted-foreground'>
-          {project.description}
-        </p>
+        <p className='text-xs '>{project.description}</p>
+        <div className='flex flex-row gap-2 flex-wrap text-xs uppercase text-muted-foreground'>
+          {project.technologies.map((item, index) => (
+            <p key={index}>{item}</p>
+          ))}
+        </div>
       </div>
       <div className='flex flex-row justify-end space-x-4'>
         {project.repository ? (
