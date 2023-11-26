@@ -22,7 +22,7 @@ const About = ({}: AboutProps): React.ReactElement => {
         </div>
         <div className='w-full md:w-2/6'>
           <div className='relative hidden md:block w-60 h-72'>
-            <Image src='/assets/images/avatar.svg' alt='profile' fill={true} />
+            <Image src='/assets/images/avatar.svg' alt='profile' fill />
           </div>
         </div>
       </div>
