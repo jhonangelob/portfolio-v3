@@ -5,6 +5,7 @@ import { Button } from '../ui/button';
 import TestimonalsCard from '../Testimonials/TestimonalsCard';
 import ProjectCard from '../Projects/ProjectCard';
 import ProjectFiller from '../Projects/ProjectFiller';
+import Link from 'next/link';
 
 type PaginationProps = {
   data: any[];
@@ -47,16 +48,17 @@ const Pagination = ({
       {showButtons && (
         <div className='flex flex-row gap-2 justify-center items-center mt-8'>
           {Array.from({ length: elementNumber }, (_, index) => (
-            <Button
-              variant='outline'
-              className={`text-muted-foreground hover:text-accent-red hover:border-accent-red text-sm border-muted-foreground ${
-                selected === index && 'border-accent-red text-accent-red'
-              }`}
-              key={index}
-              onClick={() => setSelected(index)}
-            >
-              {index + 1}
-            </Button>
+            <Link href={`#${type}`} key={index}>
+              <Button
+                variant='outline'
+                className={`text-muted-foreground hover:text-accent-red hover:border-accent-red text-sm border-muted-foreground ${
+                  selected === index && 'border-accent-red text-accent-red'
+                }`}
+                onClick={() => setSelected(index)}
+              >
+                {index + 1}
+              </Button>
+            </Link>
           ))}
         </div>
       )}

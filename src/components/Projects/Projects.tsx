@@ -7,7 +7,7 @@ type ProjectProps = {};
 
 const Projects = ({}: ProjectProps): React.ReactElement => {
   return (
-    <section className='wrapper flex-center my-20 md:my-40'>
+    <section className='wrapper flex-center my-20 md:my-40' id='projects'>
       <div className='header-text'>Projects</div>
       <Pagination data={projects} type='projects' max={4} />
     </section>
