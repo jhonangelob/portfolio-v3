@@ -3,7 +3,7 @@
 @tailwind utilities;
 
 .wrapper {
-  @apply max-w-5xl w-screen flex flex-col px-4 md:px-8 scroll-mt-40;
+  @apply max-w-5xl w-screen flex flex-col px-4 md:px-8 scroll-mt-24 md:scroll-mt-40;
 }
 
 .header-text {
