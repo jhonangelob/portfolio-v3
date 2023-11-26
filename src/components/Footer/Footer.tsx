@@ -9,7 +9,7 @@ import { animateFooter } from '@/lib/animate';
 
 const Footer = (): React.ReactElement => {
   return (
-    <footer className='flex-center fixed bottom-0 w-screen z-10 bg-background'>
+    <footer className='flex-center bottom-0 w-screen z-10 bg-background'>
       <motion.div
         className='flex justify-center items-center md:justify-between flex-col md:flex-row  text-foreground max-w-6xl w-full border-none md:border-t-2 pb-4 px-4 md:px-8 pt-6'
         animate={animateFooter.up.animate}
