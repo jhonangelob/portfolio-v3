@@ -24,14 +24,19 @@ const Footer = (): React.ReactElement => {
               (item, index) =>
                 item.show.footer && (
                   <li key={index}>
-                    <Link href={item.link} className='text-sm font-semibold'>
+                    <Link
+                      href={item.link}
+                      className='text-sm font-semibold hover:text-accent-red'
+                    >
                       {item.name}
                     </Link>
                   </li>
                 )
             )}
             <li>
-              <p className='text-sm font-semibold italic select-none'>jhn</p>
+              <p className='text-sm font-semibold ml-4 italic select-none'>
+                jhn
+              </p>
             </li>
           </ul>
         </nav>
