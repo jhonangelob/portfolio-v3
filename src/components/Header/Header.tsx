@@ -60,7 +60,7 @@ const Header = ({}: HeaderProps): React.ReactElement => {
               )
           )}
           <li className='hidden md:block'>
-            <Link href='/'>
+            <Link href='#contact'>
               <Button
                 variant='outline'
                 size='lg'
@@ -71,7 +71,7 @@ const Header = ({}: HeaderProps): React.ReactElement => {
             </Link>
           </li>
           <li className='block md:hidden'>
-            <Link href='/' className='uppercase text-sm font-bold'>
+            <Link href='#contact' className='uppercase text-sm font-bold'>
               Contact
             </Link>
           </li>

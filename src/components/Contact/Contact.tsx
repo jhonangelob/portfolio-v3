@@ -53,7 +53,7 @@ const Contact = ({}: ContactProps): React.ReactElement => {
   };
 
   return (
-    <section className='wrapper flex-center my-20'>
+    <section className='wrapper flex-center my-20' id='contact'>
       <div className='header-text'>Contact</div>
       <div className='max-w-3xl w-full flex flex-col md:flex-row gap-8'>
         <div className='flex flex-col w-full md:w-4/6 space-y-4'>
