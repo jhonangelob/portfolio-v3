@@ -64,7 +64,9 @@ const Technology = ({}: TechnologyProps): React.ReactElement => {
           </p>
           <ScrollArea className='h-[230px] w-full md:w-5/6'>
             {experiences.map((item, index) => (
-              <ExperienceCard experience={item} key={index} />
+              <motion.div key={index} whileInView={animate.slide.left}>
+                <ExperienceCard experience={item} />
+              </motion.div>
             ))}
           </ScrollArea>
         </div>

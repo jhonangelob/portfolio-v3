@@ -2,8 +2,6 @@ import React from 'react';
 import { Separator } from '../ui/separator';
 import { ScrollBar } from '../ui/scroll-area';
 import { Experience } from '@/types/experiences';
-import { motion } from 'framer-motion';
-import { animate } from '@/lib/animate';
 
 type ExperienceCardProps = {
   experience: Experience;
@@ -14,7 +12,7 @@ const ExperienceCard = ({
 }: ExperienceCardProps): React.ReactElement => {
   const { position, company, location, date } = experience;
   return (
-    <motion.div whileInView={animate.slide.left}>
+    <>
       <div className='w-full space-y-1'>
         <div className='text-sm font-semibold'>{position}</div>
         <div className='text-xs'>{company}</div>
@@ -30,7 +28,7 @@ const ExperienceCard = ({
       </div>
       <Separator className='my-3' />
       <ScrollBar orientation='horizontal' />
-    </motion.div>
+    </>
   );
 };
 

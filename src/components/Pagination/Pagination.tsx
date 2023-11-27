@@ -6,6 +6,7 @@ import TestimonalsCard from '../Testimonials/TestimonalsCard';
 import ProjectCard from '../Projects/ProjectCard';
 import ProjectFiller from '../Projects/ProjectFiller';
 import Link from 'next/link';
+import { motion } from 'framer-motion';
 
 type PaginationProps = {
   data: any[];
@@ -31,7 +32,16 @@ const Pagination = ({
           {data
             .slice(selected * max, max * (selected + 1))
             .map((item, index) => (
-              <TestimonalsCard testimonial={item} key={index} />
+              <motion.div
+                key={index}
+                whileInView={{
+                  opacity: [0, 1],
+                  x: [0, 0],
+                  transition: { duration: 1, delay: index * 0.25 },
+                }}
+              >
+                <TestimonalsCard testimonial={item} />
+              </motion.div>
             ))}
         </div>
       )}
@@ -40,7 +50,16 @@ const Pagination = ({
           {data
             .slice(selected * max, max * (selected + 1))
             .map((item, index) => (
-              <ProjectCard key={index} project={item} />
+              <motion.div
+                key={index}
+                whileInView={{
+                  opacity: [0, 1],
+                  x: [0, 0],
+                  transition: { duration: 1, delay: index * 1 },
+                }}
+              >
+                <ProjectCard project={item} />
+              </motion.div>
             ))}
           <ProjectFiller />
         </div>
