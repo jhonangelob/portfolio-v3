@@ -89,4 +89,9 @@ export const animate = {
     x: [0, 0],
     transition: { duration: 1, delay: 0.2 },
   },
+  appearNoDelay: {
+    opacity: [0, 1],
+    x: [0, 0],
+    transition: { duration: 1 },
+  },
 };
