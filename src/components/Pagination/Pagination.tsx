@@ -51,7 +51,7 @@ const Pagination = ({
             <Link href={`#${type}`} key={index}>
               <Button
                 variant='outline'
-                className={`text-muted-foreground hover:text-accent-red hover:border-accent-red text-sm border-muted-foreground ${
+                className={`text-muted-foreground hover:text-accent-red hover:border-accent-red p-0 h-[30px] w-[30px] md:h-[38px] md:w-[40px] text-xs md:text-sm border-muted-foreground ${
                   selected === index && 'border-accent-red text-accent-red'
                 }`}
                 onClick={() => setSelected(index)}
