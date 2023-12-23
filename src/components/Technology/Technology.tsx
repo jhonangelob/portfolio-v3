@@ -27,7 +27,7 @@ const Technology = ({}: TechnologyProps): React.ReactElement => {
       <div className='flex max-w-full w-full flex-col md:flex-row text-sm gap-6 md:gap-4'>
         <div className='w-full md:w-4/6 space-y-4'>
           <p className='text-accent-red text-base font-medium'>Technologies</p>
-          <p>Full Stack Development</p>
+          <p>Development</p>
           <div className='flex flex-row flex-wrap w-full md:w-5/6 gap-6'>
             {technologies.development.map((item, index) => (
               <motion.div
