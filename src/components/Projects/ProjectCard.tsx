@@ -16,7 +16,7 @@ const ProjectCard = ({ project }: ProjectCardProps): React.ReactElement => {
         <p className='text-md font-semibold'>
           {project.title} {project.subtitle && `- ${project.subtitle}`}
         </p>
-        <p className='text-xs '>{project.description}</p>
+        <p className='text-xs'>{project.description}</p>
         <div className='flex flex-row gap-2 flex-wrap text-xs uppercase text-muted-foreground'>
           {project.technologies.map((item, index) => (
             <p key={index}>{item}</p>

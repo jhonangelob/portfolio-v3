@@ -7,15 +7,11 @@ import { projects } from '@/constants/projects';
 type ProjectFillerProps = {};
 
 const ProjectFiller = ({}: ProjectFillerProps): React.ReactElement => {
-  const slots = 4 - projects.length;
   return (
     <>
-      {Array.from({ length: slots }, (_, index) => (
-        <Card
-          key={index}
-          className='w-full border-0 bg-background rounded-none flex-col px-2 md:px-5'
-        >
-          <div>
+      {projects.length < 4 && (
+        <Card className='w-full border-0 bg-background rounded-none flex-col px-2 md:px-5'>
+          <div className='flex flex-col gap-2'>
             <p className='text-md font-semibold text-muted-foreground'>
               Project - Incomplete.
             </p>
@@ -41,7 +37,7 @@ const ProjectFiller = ({}: ProjectFillerProps): React.ReactElement => {
           </div>
           <Separator className='my-3' />
         </Card>
-      ))}
+      )}
     </>
   );
 };
