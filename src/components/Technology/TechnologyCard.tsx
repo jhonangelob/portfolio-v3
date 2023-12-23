@@ -19,7 +19,7 @@ const TechnologyCard = ({
   return (
     <HoverCard>
       <HoverCardTrigger asChild>
-        <div className='relative w-[30px] h-[30px] md:w-[35px] md:h-[35px]'>
+        <div className='relative w-[35px] h-[35px]'>
           <Image src={assets} alt={name} fill={true} />
         </div>
       </HoverCardTrigger>

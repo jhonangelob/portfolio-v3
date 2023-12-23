@@ -13,7 +13,7 @@ import { certificates } from '@/constants/certificates';
 const Certificate = (): React.ReactElement => {
   return (
     <section className='max-w-5xl w-screen my-12 px-4 md:px-0 flex-center'>
-      <div className='flex-center flex-row flex-wrap mx-10 gap-8 md:gap-10 mt-12'>
+      <div className='flex-center flex-row flex-wrap mx-10 gap-8 md:gap-10 md:mt-12'>
         {certificates.map(
           (item, index) =>
             item.complete && (
