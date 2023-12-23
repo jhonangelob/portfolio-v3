@@ -38,7 +38,7 @@ const Header = ({}: HeaderProps): React.ReactElement => {
     <header className='fixed top-0 w-full bg-background z-10'>
       <nav className='w-full max-w-7xl mx-auto flex flex-row justify-between px-4 md:px-8 py-6'>
         <motion.div
-          className='flex items-center text-xl md:text-2xl font-bold italic select-none'
+          className='flex items-center text-2xl font-bold italic select-none'
           animate={animateHeader.right.animate}
           initial={animateHeader.right.initial}
         >
