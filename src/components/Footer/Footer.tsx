@@ -40,7 +40,7 @@ const Footer = (): React.ReactElement => {
             </li>
           </ul>
         </nav>
-        <div className='text-sm text-center block md:hidden text-muted-foreground'>
+        <div className='text-xs md:text-sm text-center block md:hidden text-muted-foreground'>
           © 2022 Jhon Angelo Bustarde
         </div>
       </motion.div>
