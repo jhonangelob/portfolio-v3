@@ -2,12 +2,11 @@ import { Experiences } from '@/types/experiences';
 
 export const experiences: Experiences = [
   {
-    company: 'Vananaz, Inc.',
+    company: 'Vananaz Technologies Inc.',
     location: 'Cebu, Philippines',
     position: 'Junior Software Engineer',
     date: {
       start: 'January 2023',
-      end: '',
       isPresent: true,
     },
   },
