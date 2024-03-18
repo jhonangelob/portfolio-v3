@@ -2,9 +2,9 @@ import React from 'react';
 import { Card, CardContent, CardFooter } from '../ui/card';
 
 import { RxQuote } from 'react-icons/rx';
-import { Testimonial } from '@/types/testimonials';
+import { Testimony } from '@/types/testimonials';
 
-type TestimonalCardProps = { testimonial: Testimonial };
+type TestimonalCardProps = { testimonial: Testimony };
 
 const TestimonalsCard = ({
   testimonial,
