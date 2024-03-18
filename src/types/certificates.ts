@@ -1,8 +1,7 @@
 export type Certificate = {
   title: string;
-  src: string;
-  complete: boolean;
   link: string;
+  source: string;
 };
 
-export type Certificates = Certificate[];
+export type Certificates = { data: Certificate[] };

@@ -1,17 +1,23 @@
 'use client';
 
 import React from 'react';
-import { experiences } from '@/constants/experiences';
-import { technologies } from '@/constants/technologies';
 import { ScrollArea } from '../ui/scroll-area';
 import ExperienceCard from './ExperienceCard';
 import TechnologyCard from './TechnologyCard';
 import { motion } from 'framer-motion';
 import { animate } from '@/lib/animate';
+import { Experiences } from '@/types/experiences';
+import { Technologies } from '@/types/technologies';
 
-type TechnologyProps = {};
+type TechnologyProps = {
+  technologies: Technologies;
+  experience: Experiences;
+};
 
-const Technology = ({}: TechnologyProps): React.ReactElement => {
+const Technology = ({
+  technologies,
+  experience,
+}: TechnologyProps): React.ReactElement => {
   return (
     <section className='wrapper my-20 md:my-40'>
       <div className='header-text-secondary text-left w-3/6'>
@@ -29,9 +35,9 @@ const Technology = ({}: TechnologyProps): React.ReactElement => {
           <p className='text-accent-red text-base font-medium'>Technologies</p>
           <p>Development</p>
           <div className='flex flex-row flex-wrap w-full md:w-5/6 gap-6'>
-            {technologies.development.map((item, index) => (
+            {technologies.data[0].development.map((item, index) => (
               <motion.div
-                key={index}
+                key={`${item}-${index}`}
                 whileInView={{
                   opacity: [0, 1],
                   x: [0, 0],
@@ -44,9 +50,9 @@ const Technology = ({}: TechnologyProps): React.ReactElement => {
           </div>
           <p>Others</p>
           <div className='flex flex-row flex-wrap w-full md:w-5/6 gap-6'>
-            {technologies.others.map((item, index) => (
+            {technologies.data[0].others.map((item, index) => (
               <motion.div
-                key={index}
+                key={`${item}-${index}`}
                 whileInView={{
                   opacity: [0, 1],
                   x: [0, 0],
@@ -63,23 +69,21 @@ const Technology = ({}: TechnologyProps): React.ReactElement => {
             Professional Experience
           </p>
           <ScrollArea className='h-[230px] w-full md:w-5/6'>
-            {experiences.map((item, index) => (
-              <>
+            {experience.data.map((item, index) => (
+              <div key={`${item}- ${index}`}>
                 <motion.div
-                  key={index}
                   className='block md:hidden'
                   whileInView={animate.slide.up}
                 >
                   <ExperienceCard experience={item} />
                 </motion.div>
                 <motion.div
-                  key={index}
                   className='hidden md:block'
                   whileInView={animate.slide.left}
                 >
                   <ExperienceCard experience={item} />
                 </motion.div>
-              </>
+              </div>
             ))}
           </ScrollArea>
         </div>

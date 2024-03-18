@@ -5,9 +5,7 @@ import { motion } from 'framer-motion';
 import { useInView } from 'react-intersection-observer';
 import { animateText } from '@/lib/animate';
 
-type HeroProps = {};
-
-const Hero = ({}: HeroProps): React.ReactElement => {
+const Hero = (): React.ReactElement => {
   const [ref, inView] = useInView({
     triggerOnce: true,
   });

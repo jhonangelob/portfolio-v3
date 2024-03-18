@@ -5,7 +5,7 @@ import { ThemeProvider } from '@/components/theme-provider';
 import '@/styles/globals.css';
 import Header from '@/components/Header/Header';
 import Footer from '@/components/Footer/Footer';
-import { Toaster } from '@/components/ui/toaster';
+import { LayoutProvider } from '@/components/layout-provider';
 
 const poppins = Poppins({
   subsets: ['latin'],
@@ -33,10 +33,7 @@ export default function RootLayout({
           enableSystem
           disableTransitionOnChange
         >
-          <Header />
-          {children}
-          <Toaster />
-          <Footer />
+          <LayoutProvider>{children}</LayoutProvider>
         </ThemeProvider>
       </body>
     </html>

@@ -1,15 +1,17 @@
 import React from 'react';
 
-import { projects } from '@/constants/projects';
 import Pagination from '../Pagination/Pagination';
+import { ProjectsTypes } from '@/types/projects';
 
-type ProjectProps = {};
+type ProjectProps = { projects: ProjectsTypes };
 
-const Projects = ({}: ProjectProps): React.ReactElement => {
+const Projects = ({ projects }: ProjectProps): React.ReactElement => {
+  const { data } = projects;
+
   return (
     <section className='wrapper flex-center my-20 md:my-40' id='projects'>
       <div className='header-text'>Projects</div>
-      <Pagination data={projects} type='projects' max={4} />
+      <Pagination data={data} type='projects' max={4} />
     </section>
   );
 };

@@ -15,18 +15,18 @@ type TechnologyProps = {
 const TechnologyCard = ({
   technology,
 }: TechnologyProps): React.ReactElement => {
-  const { assets, name, description } = technology;
+  const { image, name, description } = technology;
   return (
     <HoverCard>
       <HoverCardTrigger asChild>
         <div className='relative w-[35px] h-[35px]'>
-          <Image src={assets} alt={name} fill={true} />
+          <Image src={image} alt={name} fill={true} />
         </div>
       </HoverCardTrigger>
       <HoverCardContent className='w-80'>
         <div className='flex justify-between space-x-4'>
           <Avatar>
-            <AvatarImage src={assets} />
+            <AvatarImage src={image} />
             <AvatarFallback>jhn</AvatarFallback>
           </Avatar>
           <div className='space-y-1'>

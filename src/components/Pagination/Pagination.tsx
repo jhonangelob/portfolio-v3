@@ -4,7 +4,6 @@ import { useState } from 'react';
 import { Button } from '../ui/button';
 import TestimonalsCard from '../Testimonials/TestimonalsCard';
 import ProjectCard from '../Projects/ProjectCard';
-import ProjectFiller from '../Projects/ProjectFiller';
 import Link from 'next/link';
 import { motion } from 'framer-motion';
 
@@ -61,7 +60,6 @@ const Pagination = ({
                 <ProjectCard project={item} />
               </motion.div>
             ))}
-          <ProjectFiller />
         </div>
       )}
       {showButtons && (

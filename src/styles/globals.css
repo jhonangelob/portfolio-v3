@@ -6,6 +6,10 @@
   @apply max-w-5xl w-screen flex flex-col px-4 md:px-8 scroll-mt-24 md:scroll-mt-40;
 }
 
+.page-wrapper {
+  @apply max-w-5xl w-screen min-h-[calc(100vh-(90.5px+64px))] flex flex-col px-4 md:px-8 scroll-mt-24 md:scroll-mt-40 pt-8 md:pt-12;
+}
+
 .header-text {
   @apply font-bold text-6xl md:text-8xl text-center text-foreground select-none mb-12;
 }

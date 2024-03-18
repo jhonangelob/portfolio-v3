@@ -3,10 +3,10 @@ import Link from 'next/link';
 import { Card } from '../ui/card';
 import { Button } from '../ui/button';
 import { Separator } from '../ui/separator';
-import { Project } from '@/types/projects';
+import { ProjectTypes } from '@/types/projects';
 
 type ProjectCardProps = {
-  project: Project;
+  project: ProjectTypes;
 };
 
 const ProjectCard = ({ project }: ProjectCardProps): React.ReactElement => {
@@ -14,11 +14,13 @@ const ProjectCard = ({ project }: ProjectCardProps): React.ReactElement => {
     <Card className='w-full border-0 bg-background rounded-none flex-col px-2 md:px-5'>
       <div className='flex flex-col gap-2'>
         <p className='text-md font-semibold'>
-          {project.title} {project.subtitle && `- ${project.subtitle}`}
+          {project.title}{' '}
+          <span className='font-base'>
+            {project.subtitle && `- ${project.subtitle}`}
+          </span>
         </p>
-        <p className='text-xs'>{project.description}</p>
         <div className='flex flex-row gap-2 flex-wrap text-xs uppercase text-muted-foreground'>
-          {project.technologies.map((item, index) => (
+          {project.technologies.map((item: any, index: any) => (
             <p key={index}>{item}</p>
           ))}
         </div>

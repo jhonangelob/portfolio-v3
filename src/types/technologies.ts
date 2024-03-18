@@ -1,11 +1,10 @@
 export type Technology = {
-  assets: any;
+  image: any;
   name: string;
   link: string;
   description: string;
 };
 
 export type Technologies = {
-  development: Technology[];
-  others: Technology[];
+  data: { development: Technology[]; others: Technology[] }[];
 };

@@ -16,7 +16,7 @@ const Footer = (): React.ReactElement => {
         initial={animateFooter.up.initial}
       >
         <div className='text-sm hidden md:block'>
-          Built with Next.js, Tailwind, shadcn/ui, and Vercel
+          Built with Next.js, Tailwind, shadcn, aceternity, Sanity, and Vercel
         </div>
         <nav className='hidden md:block'>
           <ul className='flex-end flex-row gap-4'>

@@ -9,6 +9,7 @@ export type Experience = {
   location: string;
   position: string;
   date: ExperienceDate;
+  description: string[];
 };
 
-export type Experiences = Experience[];
+export type Experiences = { data: Experience[] };

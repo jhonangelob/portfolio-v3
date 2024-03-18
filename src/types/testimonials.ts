@@ -3,10 +3,10 @@ type Company = {
   position: string;
 };
 
-export type Testimonial = {
+export type Testimony = {
   message: string;
   name: string;
   company: Company;
 };
 
-export type Testimonials = Testimonial[];
+export type Testimonies = { data: Testimony[] };

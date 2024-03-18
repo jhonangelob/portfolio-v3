@@ -1,4 +1,4 @@
-export type Project = {
+export type ProjectTypes = {
   title: string;
   subtitle: string;
   description: string;
@@ -7,4 +7,4 @@ export type Project = {
   technologies: string[];
 };
 
-export type Projects = Project[];
+export type ProjectsTypes = { data: ProjectTypes[] };
