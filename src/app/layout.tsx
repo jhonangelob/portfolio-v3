@@ -27,14 +27,7 @@ export default function RootLayout({
       <body
         className={`${poppins.className} w-full bg-background flex flex-col min-h-screen overflow-x-hidden pt-[90px] items-center`}
       >
-        <ThemeProvider
-          attribute='class'
-          defaultTheme='system'
-          enableSystem
-          disableTransitionOnChange
-        >
-          <LayoutProvider>{children}</LayoutProvider>
-        </ThemeProvider>
+        <LayoutProvider>{children}</LayoutProvider>
       </body>
     </html>
   );
