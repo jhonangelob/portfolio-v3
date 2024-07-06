@@ -1,7 +1,4 @@
 import React from 'react';
-import Image from 'next/image';
-import Link from 'next/link';
-import { ArrowUpRight } from 'lucide-react';
 import { AboutType } from '@/types/about';
 
 type AboutProps = { data: AboutType };
@@ -15,12 +12,6 @@ const About = ({ data }: AboutProps): React.ReactElement => {
           {data.data[0].texts.map((item, index) => (
             <div key={index}>{item.children[0].text}</div>
           ))}
-          <Link
-            href='/about'
-            className='ml-auto flex flex-row gap-2 group text-accent-red'
-          >
-            More <ArrowUpRight />
-          </Link>
         </div>
       </div>
     </section>

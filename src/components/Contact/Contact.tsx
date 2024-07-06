@@ -19,11 +19,14 @@ import { sendEmail } from '@/lib/email';
 import * as z from 'zod';
 import { motion } from 'framer-motion';
 import { animate } from '@/lib/animate';
+import { useLoadingState } from '@/store/useLoading';
 
 type ContactProps = {};
 
 const Contact = ({}: ContactProps): React.ReactElement => {
   const { toast } = useToast();
+  const { setIsLoading } = useLoadingState();
+
   const form = useForm<z.infer<typeof formSchema>>({
     resolver: zodResolver(formSchema),
     defaultValues: {
@@ -35,11 +38,16 @@ const Contact = ({}: ContactProps): React.ReactElement => {
 
   const sendMessage = async (values: z.infer<typeof formSchema>) => {
     try {
+      setIsLoading(true);
       await sendEmail(values);
-      toast({
-        title: 'Email Sent!',
-        description: 'Thank you for reaching out!',
-      });
+      setIsLoading(false);
+
+      setTimeout(() => {
+        toast({
+          title: 'Email Sent!',
+          description: 'Thank you for reaching out!',
+        });
+      }, 1000);
     } catch (error) {
       toast({
         title: 'Email Sending Failed!',
