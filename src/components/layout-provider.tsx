@@ -5,6 +5,8 @@ import Header from './Header/Header';
 import Footer from './Footer/Footer';
 import { usePathname } from 'next/navigation';
 import { Toaster } from './ui/toaster';
+import Loading from '@/app/loading';
+import { useLoadingState } from '@/store/useLoading';
 
 type LayoutProvider = {
   children: React.ReactNode;
@@ -12,6 +14,8 @@ type LayoutProvider = {
 
 export function LayoutProvider({ children }: LayoutProvider) {
   const path = usePathname();
+
+  const { isLoading } = useLoadingState();
 
   if (path.includes('studio')) {
     return (
@@ -21,7 +25,11 @@ export function LayoutProvider({ children }: LayoutProvider) {
       </>
     );
   } else {
-    return (
+    return isLoading ? (
+      <React.Fragment>
+        <Loading />
+      </React.Fragment>
+    ) : (
       <React.Fragment>
         <Header />
         {children}
