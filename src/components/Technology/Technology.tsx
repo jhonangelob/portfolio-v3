@@ -66,7 +66,7 @@ const Technology = ({
         </div>
         <div className='w-full md:w-2/6 flex-col flex gap-4 mt-4 md:mt-0'>
           <p className='text-accent-red text-base font-medium'>
-            Professional Experience
+            Relevant Experience
           </p>
           <ScrollArea className='h-[230px] w-full md:w-5/6'>
             {experience.data.map((item, index) => (
